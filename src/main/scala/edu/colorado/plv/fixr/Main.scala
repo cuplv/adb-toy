@@ -34,7 +34,7 @@ object Main extends App {
      Logger(LoggerFactory.getLogger("test logger"))
 
    val instTest = for {
-     instTest <- Adb.extend("-H $serverAddress -P $portNumber).target(emuID).shell("ls") !
+     instTest <- Adb.extend(s"-H $serverAddress -P $portNumber").target(emuID).shell("ls") !
    } yield instTest
    instTest match {
      case SuccTry(_) => println("Success")
